@@ -2,6 +2,7 @@ __pycache__
 /local-runner/
 /python3-cgdk/
 /src/model/
+/src/astar.py
 /src/RemoteProcessClient.py
 /src/Runner.py
 /build.zip
