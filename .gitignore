@@ -1,0 +1,9 @@
+__pycache__
+/local-runner/
+/python3-cgdk/
+/src/model/
+/src/RemoteProcessClient.py
+/src/Runner.py
+/build.zip
+/local-runner.zip
+/python3-cgdk.zip
