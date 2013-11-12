@@ -1,13 +1,20 @@
+import copy
+
 from astar import astar
 
 
 def search_path(world, start, end):
+    cells = copy.deepcopy(world.cells)
+
+    for trooper in world.troopers:
+        cells[trooper.x][trooper.y] = 9
+
     def neighbors(pos):
         for dx, dy in ((-1, 0), (0, -1), (0, 1), (1, 0)):
             x = pos[0] + dx
             y = pos[1] + dy
             if 0 <= x < world.width and 0 <= y < world.height:
-                if world.cells[x][y] == 0:
+                if cells[x][y] == 0:
                     yield (x, y)
 
     def goal(pos):

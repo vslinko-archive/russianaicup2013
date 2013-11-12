@@ -6,11 +6,14 @@ import pathfinder
 def go_to(me, world, move, pos):
     path = pathfinder.search_path(world, (me.x, me.y), pos)
 
-    next_pos = path[0]
+    if len(path) > 0:
+        next_pos = path[0]
+        move.action = ActionType.MOVE
+        move.x = next_pos[0]
+        move.y = next_pos[1]
+        return True
 
-    move.action = ActionType.MOVE
-    move.x = next_pos[0]
-    move.y = next_pos[1]
+    return False
 
 
 def follow(me, world, move, unit):
